@@ -8,6 +8,7 @@ function App() {
         <h1>0</h1>
         <button className="minus">- Минус</button>
         <button className="plus">Плюс +</button>
+          <p>change</p>
       </div>
     </div>
   );
