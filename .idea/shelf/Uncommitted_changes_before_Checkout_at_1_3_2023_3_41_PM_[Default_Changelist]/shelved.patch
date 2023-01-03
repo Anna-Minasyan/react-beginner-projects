@@ -1,0 +1,39 @@
+Index: src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import './index.scss';\r\n\r\nfunction App() {\r\n  return (\r\n    <div className=\"App\">\r\n      <div>\r\n        <h2>Счетчик:</h2>\r\n        <h1>0</h1>\r\n        <button className=\"minus\">- Минус</button>\r\n        <button className=\"plus\">Плюс +</button>\r\n          <p>change</p>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default App;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.js b/src/App.js
+--- a/src/App.js	
++++ b/src/App.js	
+@@ -1,14 +1,24 @@
+ import './index.scss';
++import React from "react";
+ 
+ function App() {
++    const [count, setCount] = React.useState(0);
++
++    const onClickPlus = () => {
++        setCount(count+1);
++    }
++
++    const onClickMinus = () => {
++        setCount(count-1);
++    }
++
+   return (
+     <div className="App">
+       <div>
+         <h2>Счетчик:</h2>
+-        <h1>0</h1>
+-        <button className="minus">- Минус</button>
+-        <button className="plus">Плюс +</button>
+-          <p>change</p>
++        <h1>{count}</h1>
++        <button onClick={onClickMinus} className="minus">- Минус</button>
++        <button onClick={onClickPlus} className="plus">Плюс +</button>
+       </div>
+     </div>
+   );
